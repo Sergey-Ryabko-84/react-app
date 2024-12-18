@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@common": path.resolve(__dirname, "./src/common"),
-      // "@features": path.resolve(__dirname, "./src/features"),
+      "@features": path.resolve(__dirname, "./src/features"),
       // "@layouts": path.resolve(__dirname, "./src/layouts"),
       "@redux": path.resolve(__dirname, "./src/redux"),
       "@routes": path.resolve(__dirname, "./src/routes"),

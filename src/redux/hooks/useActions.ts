@@ -1,21 +1,17 @@
 import { ActionCreatorsMapObject, bindActionCreators } from "redux";
 import { useDispatch } from "react-redux";
 import { useMemo } from "react";
+import { AppDispatch } from "@redux/types";
 
-export function useActions(
-  actions: ActionCreatorsMapObject<unknown, unknown[]>,
+export function useActions<T extends ActionCreatorsMapObject>(
+  actions: T,
   deps?: ReadonlyArray<unknown>
-): unknown {
-  const dispatch = useDispatch();
+): T {
+  const dispatch = useDispatch<AppDispatch>();
 
   return useMemo(
-    () => {
-      if (Array.isArray(actions)) {
-        return actions.map((a) => bindActionCreators(a, dispatch));
-      }
-      return bindActionCreators(actions, dispatch);
-    },
+    () => bindActionCreators(actions, dispatch),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    deps ? [dispatch, ...(deps ?? [])] : [dispatch]
+    deps ? [dispatch, ...deps] : [dispatch]
   );
 }
