@@ -1,5 +1,7 @@
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import { LoginPage } from "@features/auth";
+
+const LoginPage = lazy(() => import("@features/auth/LoginPage"));
 
 export const Router = () => (
   <Routes>
