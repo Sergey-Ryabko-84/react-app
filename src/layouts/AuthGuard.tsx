@@ -2,17 +2,17 @@ import { Navigate } from "react-router-dom";
 import { ReactNode } from "react";
 
 type AuthGuardProps = {
-  isAuthenticated?: boolean;
+  hasAccess?: boolean;
   redirectRoute: string;
   children: ReactNode;
 };
 
 export const AuthGuard = ({
-  isAuthenticated = false,
+  hasAccess = false,
   redirectRoute,
   children,
 }: AuthGuardProps) => {
-  if (!isAuthenticated) {
+  if (!hasAccess) {
     return <Navigate to={redirectRoute} replace />;
   }
 

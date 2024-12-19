@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import { ItemsPage, LoginPage } from "./lazyPages";
 
 type RouteType = {
@@ -7,6 +8,7 @@ type RouteType = {
 
 export const PRIVATE_ROUTES: Record<string, RouteType> = {
   items: { path: "/items", element: <ItemsPage /> },
+  fallback: { path: "/*", element: <Navigate to={"/items"} replace /> },
 };
 
 export const AUTH_ROUTES: Record<string, RouteType> = {

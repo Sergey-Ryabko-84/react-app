@@ -8,7 +8,7 @@ export const useRouteMap = () => {
 
   const PrivateRoutes = {
     element: (
-      <AuthGuard isAuthenticated={isLoggedIn} redirectRoute="/login">
+      <AuthGuard hasAccess={isLoggedIn} redirectRoute="/login">
         <PrivateLayout />
       </AuthGuard>
     ),
@@ -17,7 +17,7 @@ export const useRouteMap = () => {
 
   const AuthRoutes = {
     element: (
-      <AuthGuard isAuthenticated={!isLoggedIn} redirectRoute="/items">
+      <AuthGuard hasAccess={!isLoggedIn} redirectRoute="/items">
         <AuthLayout />
       </AuthGuard>
     ),

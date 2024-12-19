@@ -1,4 +1,5 @@
 import { Container } from "@mui/material";
+import { Items } from "./components";
 
 const ItemsPage = () => (
   <Container
@@ -8,7 +9,7 @@ const ItemsPage = () => (
       alignItems: "center",
       justifyContent: "center",
     }}>
-    <>ItemsPage</>
+    <Items />
   </Container>
 );
 
