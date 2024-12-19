@@ -1,7 +1,6 @@
 import { Container } from "@mui/material";
-import { LoginForm } from "./components";
 
-const LoginPage = () => (
+const ItemsPage = () => (
   <Container
     sx={{
       height: "calc(100vh - 70px)",
@@ -9,8 +8,8 @@ const LoginPage = () => (
       alignItems: "center",
       justifyContent: "center",
     }}>
-    <LoginForm />
+    <>ItemsPage</>
   </Container>
 );
 
-export default LoginPage;
+export default ItemsPage;

@@ -21,8 +21,5 @@ export const globalStyles = css`
 
   body {
     margin: 0;
-    display: flex;
-    place-items: center;
-    min-height: 100vh;
   }
 `;

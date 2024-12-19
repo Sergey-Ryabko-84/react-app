@@ -1,11 +1,13 @@
-import { lazy } from "react";
-import { Route, Routes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 
-const LoginPage = lazy(() => import("@features/auth/LoginPage"));
+import { useRouteMap } from "@layouts/hooks/useRouteMap";
 
-export const Router = () => (
-  <Routes>
-    <Route path="/login" element={<LoginPage />} />
-    <Route path="/items" element={<>ItemsPage</>} />
-  </Routes>
-);
+export const Router = () => {
+  // Get various routes configurations
+  const { PrivateRoutes, AuthRoutes } = useRouteMap();
+
+  // Generate the routes
+  const routing = useRoutes([PrivateRoutes, AuthRoutes]);
+
+  return routing;
+};
