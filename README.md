@@ -1,50 +1,87 @@
-# React + TypeScript + Vite
+# React SPA Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React Single Page Application (SPA) using Vite for development and build process. The project also includes testing with Jest and the React Testing Library, as well as linting and formatting with ESLint and Prettier.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project uses the following technologies and libraries:
 
-## Expanding the ESLint configuration
+### Frontend:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: A popular JavaScript library for building user interfaces.
+- **Vite**: A modern, fast build tool for React and other frontend frameworks.
+- **TypeScript**: A superset of JavaScript that adds static types to the language, improving developer experience and catching errors early.
+- **Material-UI (MUI)**: A set of React components that implement Google’s Material Design system.
+- **React Router**: A declarative routing library for React applications that allows for dynamic routing and navigation.
+- **Formik**: A React library for building forms with minimal effort, including validation with Yup.
+- **Yup**: A schema builder for runtime value parsing and validation, often used with Formik for form validation.
+- **Redux Toolkit**: A library to simplify Redux state management, including reducers, actions, and store setup.
 
-- Configure the top-level `parserOptions` property like this:
+### Testing:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+- **Jest**: A testing framework for running unit tests, integration tests, and snapshot tests.
+- **React Testing Library**: A library for testing React components, focusing on testing the component's behavior and interactions rather than implementation details.
+- **ts-jest**: A Jest transformer for TypeScript, enabling Jest to work with TypeScript files.
+
+### Code Quality:
+
+- **ESLint**: A static code analysis tool to identify problematic patterns in JavaScript/TypeScript code.
+- **Prettier**: An opinionated code formatter to maintain a consistent code style across the project.
+- **TypeScript ESLint**: ESLint plugin for TypeScript that helps enforce type safety in code.
+
+### Styling:
+
+- **Emotion**: A library for writing CSS styles with JavaScript. The project uses `@emotion/react` and `@emotion/styled` for styling React components.
+
+## Requirements
+
+- [Node.js](https://nodejs.org/) (v16 or later)
+- [Yarn](https://yarnpkg.com/) (for package management)
+
+## Setup
+
+To get started with the project, follow these steps:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Sergey-Ryabko-84/react-spa.git
+cd react-spa
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
+```bash
+yarn install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
+### 3. Run the development server
+
+```bash
+yarn dev
+```
+
+### 4. Build the project
+
+```bash
+yarn build
+```
+
+### 5. Preview the production build
+
+```bash
+yarn preview
+```
+
+### 6. Run tests
+
+```bash
+yarn test
+```
+
+### 7. Linting and Formatting
+
+```bash
+yarn lint
+yarn format
 ```
