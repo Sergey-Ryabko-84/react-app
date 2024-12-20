@@ -7,7 +7,7 @@ export const defaultFormValues = {
   password: "",
 };
 
-export const validationSchema = yup.object({
+export const validationSchema = yup.object().shape({
   email: yup
     .string()
     .matches(EMAIL_REGEX, "Not a valid email")

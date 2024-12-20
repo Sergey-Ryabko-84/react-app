@@ -1,16 +1,10 @@
-import { Container } from "@mui/material";
+import Stack from "@mui/material/Stack";
 import { Items } from "./components";
 
 const ItemsPage = () => (
-  <Container
-    sx={{
-      height: "calc(100vh - 70px)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    }}>
+  <Stack height="calc(100vh - 70px)">
     <Items />
-  </Container>
+  </Stack>
 );
 
 export default ItemsPage;

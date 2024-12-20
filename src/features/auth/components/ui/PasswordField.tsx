@@ -38,5 +38,3 @@ export const PasswordField = <T,>({
     />
   );
 };
-
-export default PasswordField;

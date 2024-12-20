@@ -1,1 +1,1 @@
-export { PaperWrapper } from "./PaperWrapper";
+export * from "./PaperWrapper";

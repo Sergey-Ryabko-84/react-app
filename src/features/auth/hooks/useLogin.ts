@@ -4,11 +4,13 @@ import { authActions } from "@redux/modules/auth";
 import { LoginFormType } from "../types";
 import { defaultFormValues, validationSchema } from "../formUtils";
 
-export const useLogin = () => {
+export const useLogin = (
+  setSubmitError: React.Dispatch<React.SetStateAction<string | null>>
+) => {
   const useAuthActions = () => useActions(authActions);
   const { login } = useAuthActions();
 
-  const handleSubmit = async (
+  const handleSubmit = (
     { email, password }: LoginFormType,
     { setSubmitting, resetForm }: FormikHelpers<LoginFormType>
   ) => {
@@ -17,6 +19,7 @@ export const useLogin = () => {
       resetForm();
     } catch (error) {
       console.log("error", error);
+      setSubmitError("An error occurred while trying to log in.");
     } finally {
       setSubmitting(false);
     }
@@ -24,7 +27,7 @@ export const useLogin = () => {
 
   const formik = useFormik<LoginFormType>({
     initialValues: defaultFormValues,
-    validationSchema: validationSchema,
+    validationSchema,
     onSubmit: handleSubmit,
     enableReinitialize: true,
   });
