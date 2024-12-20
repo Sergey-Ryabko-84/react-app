@@ -36,7 +36,12 @@ export const ItemFormModal = ({ handleClose, item }: Props) => {
           {submitError && <ErrorMessage message={submitError} />}
 
           <Stack direction="row" gap={2}>
-            <Button variant="contained" type="submit" color="success" fullWidth>
+            <Button
+              variant="contained"
+              type="submit"
+              color="success"
+              disabled={formik.isSubmitting}
+              fullWidth>
               {`${actionName} item`}
             </Button>
             <Button variant="contained" onClick={handleClose} fullWidth>
