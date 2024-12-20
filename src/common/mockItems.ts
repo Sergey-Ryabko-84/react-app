@@ -9,6 +9,4 @@ export const mockItems = [
   { id: "8", name: "Microsoft Surface Laptop 5", price: 1499 },
   { id: "9", name: "Amazon Kindle Paperwhite", price: 139 },
   { id: "10", name: "Canon EOS R5 Camera", price: 3899 },
-  { id: "11", name: "Bose SoundLink Revolve+ Speaker", price: 329 },
-  { id: "12", name: "Seagate 2TB External Hard Drive", price: 69 },
 ];

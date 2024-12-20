@@ -7,7 +7,7 @@ import {
 import { DataGrid } from "./DataGrid";
 
 const PAGINATION_INITIAL_PAGE = 0;
-const PAGINATION_INITIAL_PAGE_SIZE = 15;
+const PAGINATION_INITIAL_PAGE_SIZE = 12;
 
 type Props = {
   columnsConfig: GridColDef[];
@@ -34,7 +34,7 @@ export const Table = ({
         pagination
         rows={rows}
         columns={columnsConfig}
-        pageSizeOptions={[15, 25, 50, 75]}
+        pageSizeOptions={[12, 25, 50, 75]}
         initialState={{ pagination: { paginationModel } }}
         rowSelection={false}
       />
